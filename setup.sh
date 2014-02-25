@@ -53,6 +53,10 @@ then
     exit $E_OPTERROR
 fi
 
+# Initialize submodules
+git submodule init
+git submodule update
+
 if $install; then
     for i in "${!SYMLINKS[@]}"; do
     	symlink ${SOURCES[$i]} ${SYMLINKS[$i]}
@@ -62,7 +66,3 @@ else
         unsymlink ${SYMLINKS[$i]}
     done
 fi
-
-# Initialize submodules
-git submodule init
-git submodule update
