@@ -4,12 +4,14 @@ SYMLINKS=(
     ~/.vimrc
     ~/.Xdefaults
     ~/.bashrc
+    ~/.gitconfig
     )
 SOURCES=(
     vim
     vim/vimrc
     Xdefaults
     bash/bashrc
+    gitconfig
     )
 
 NO_ARGS=0

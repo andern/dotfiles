@@ -1,0 +1,28 @@
+[color]
+    ui = true
+    pager = true
+    status = auto
+    branch = auto
+    interactive = auto
+
+[alias]  
+    co = checkout  
+    st = !git branch && echo "" && git status  
+	lg = log --color --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset'
+
+[color]  
+    branch = auto  
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[push]
+    default = simple
+
+[branch]
+    autosetuprebase = always
+
+[include]
+    path = ~/dotfiles/gitconfig.local
