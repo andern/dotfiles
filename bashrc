@@ -1,0 +1,25 @@
+# Shell is non-interactive.  Be done now!
+if [[ $- != *i* ]] ; then return; fi
+
+# Find current dir, even if symlinked.
+# https://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-
+# directory-its-stored-in/
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+eval `dircolors ~/git/dircolors-solarized/dircolors.ansi-dark`
+
+export EDITOR=vim
+export SOLARIZED=true
+export TERM="screen-256color"
+
+alias mpcp='mpc playlist -f "[%position% %artist% - %title%]"'
+alias tmux="tmux -2"
+alias valgrinda="valgrind --track-origins=yes --leak-check=full"
+
+source $DIR/bashrc_priv
