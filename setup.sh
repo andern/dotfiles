@@ -9,7 +9,7 @@ SOURCES=(
     vim
     vim/vimrc
     Xdefaults
-    bashrc
+    bash/bashrc
     )
 
 NO_ARGS=0

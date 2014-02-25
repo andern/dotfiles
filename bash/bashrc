@@ -12,7 +12,7 @@ while [ -h "$SOURCE" ]; do
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-eval `dircolors ~/git/dircolors-solarized/dircolors.ansi-dark`
+eval `dircolors ${DIR}/dircolors-solarized/dircolors.ansi-dark`
 
 export EDITOR=vim
 export SOLARIZED=true
