@@ -1,0 +1,35 @@
+" Look and feel
+syntax on
+set number
+
+" Solarized
+set nocompatible
+set t_Co=16
+"let g:solarized_termcolors=256
+call pathogen#infect()
+set background=dark " dark | light "
+colorscheme solarized
+call togglebg#map("<F5>")
+
+"set cursorline
+set colorcolumn=80
+
+ " Indentation
+filetype plugin on
+filetype indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+  " Filetype specific indentation
+autocmd Filetype c setlocal tabstop=8 shiftwidth=8
+
+" Tabbing
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-n> :tabnew<CR>
+map <C-w> :tabclose<CR>
+
+call pathogen#incubate()
+call pathogen#helptags()
+
+runtime source/backup
