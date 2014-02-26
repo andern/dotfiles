@@ -1,4 +1,17 @@
 #!/bin/bash
+# Copyright 2014 Andreas Halle
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 3 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 SYMLINKS=(
     ~/.vim
     ~/.vimrc
@@ -18,8 +31,14 @@ SOURCES=(
     tmux/tmux.conf
     )
 
-NO_ARGS=0
-E_OPTERROR=85
+function usage {
+    echo "Usage: $0 -[iu]"
+    echo
+    echo "Options:"
+    echo "  -i    create symlinks"
+    echo "  -u    delete symlinks"
+    echo "  -v    verbose output"
+}
 
 function symlink {
     if [ ! -e $2 ]; then
@@ -31,7 +50,7 @@ function symlink {
 
 function unsymlink {
     if [ -L $1 ]; then
-        rm $1
+        unlink $1
     else
         if [ -e $1 ]; then
             echo "Did not remove $1 because it is not a symlink."
@@ -39,36 +58,35 @@ function unsymlink {
     fi
 }
 
-install=true
-while getopts ":iu" Option
-do
-    case $Option in
-        i) install=true;;
-        u) install=false;;
-        *) echo "Invalid option."; exit $E_OPTERROR;
-    esac
-done
+function install {
+    for i in "${!SYMLINKS[@]}"; do
+    	symlink ${SOURCES[$i]} ${SYMLINKS[$i]}
+    done
+}
 
-if [ $# -eq "$NO_ARGS" ] # No arguments
+function uninstall {
+    for i in "${!SYMLINKS[@]}"; do
+        unsymlink ${SYMLINKS[$i]}
+    done
+}
+
+if [[ $# -eq "$NO_ARGS" ]] # No arguments
 then
-    echo "Usage: $0 -[iu]"
-    echo
-    echo "Options:"
-    echo "  -i    create symlinks"
-    echo "  -u    delete symlinks"
-    exit $E_OPTERROR
+    usage
+    exit 0
 fi
 
 # Initialize submodules
 git submodule init
 git submodule update
 
-if $install; then
-    for i in "${!SYMLINKS[@]}"; do
-    	symlink ${SOURCES[$i]} ${SYMLINKS[$i]}
-    done
-else
-    for i in "${!SYMLINKS[@]}"; do
-        unsymlink ${SYMLINKS[$i]}
-    done
-fi
+while getopts ":iuv" opt; do
+    case $opt in
+        v) set -x;;
+        i) install;;
+        u) uninstall;;
+        *) echo "Invalid option: -$OPTARG" >&2; exit;;
+    esac
+done
+
+exit 0
