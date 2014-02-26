@@ -19,6 +19,8 @@ eval `dircolors ${BASHDIR}/dircolors-solarized/dircolors.ansi-dark`
 export EDITOR=vim
 export SOLARIZED=true
 export TERM="screen-256color"
+export LESSOPEN="| source-highlight-esc.sh %s"
+export LESS=' -R '
 
 alias mpcp='mpc playlist -f "[%position% %artist% - %title%]"'
 alias tmux="tmux -2"
