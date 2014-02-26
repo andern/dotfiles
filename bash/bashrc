@@ -6,13 +6,15 @@ if [[ $- != *i* ]] ; then return; fi
 # directory-its-stored-in/
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do
-    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    BASHDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
     SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+    [[ $SOURCE != /* ]] && SOURCE="$BASHDIR/$SOURCE"
 done
-DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+BASHDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+export BASHDIR
+export DOTFILESDIR="$( cd -P "${BASHDIR}/.." && pwd )"
 
-eval `dircolors ${DIR}/dircolors-solarized/dircolors.ansi-dark`
+eval `dircolors ${BASHDIR}/dircolors-solarized/dircolors.ansi-dark`
 
 export EDITOR=vim
 export SOLARIZED=true
@@ -22,6 +24,6 @@ alias mpcp='mpc playlist -f "[%position% %artist% - %title%]"'
 alias tmux="tmux -2"
 alias valgrinda="valgrind --track-origins=yes --leak-check=full"
 
-if [ -f $DIR/bashrc.local ]; then
-    source $DIR/bashrc.local
+if [ -f $BASHDIR/bashrc.local ]; then
+    source $BASHDIR/bashrc.local
 fi

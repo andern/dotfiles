@@ -1,0 +1,41 @@
+set menu_scroll=yes
+set send_charset="utf-8"
+set assumed_charset="iso-8859-1"
+set editor="vim -c 'set syntax=mail ft=mail enc=utf-8'"
+set pager_stop="yes" # Don't jump to next message when at bottom of message
+auto_view application/msword
+auto_view application/pdf
+auto_view text/html
+alternative_order text/plain text/html
+
+set folder = "~/Maildir"
+source ~/.mutt/mailboxes
+set spoolfile = "+ah/INBOX"
+set record = "+ah/Sent"
+set postponed = "+ah/Drafts"
+
+# Key bindings
+bind pager <Up> previous-line
+bind pager <Down> next-line
+bind pager k previous-line
+bind pager j next-line
+
+# Headers
+ignore          *
+unignore        From To Cc Bcc Date Subject
+unhdr_order     *
+hdr_order       From: To: Cc: Bcc: Date: Subject:
+
+# Abook
+set query_command = "abook --mutt-query '%s'"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+
+# Cryptography
+source `echo \$DOTFILESDIR/mutt/crypto`
+
+# Include local muttrc only if it exists
+source `FILE="$DOTFILESDIR/mutt/muttrc.local"; if [ ! -s "$FILE" ]; then FILE=/dev/null;fi;echo "$FILE"`
+
+# Solarized dark
+source `echo \$DOTFILESDIR/mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc`

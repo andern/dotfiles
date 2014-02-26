@@ -5,6 +5,7 @@ SYMLINKS=(
     ~/.Xdefaults
     ~/.bashrc
     ~/.gitconfig
+    ~/.muttrc
     )
 SOURCES=(
     vim
@@ -12,6 +13,7 @@ SOURCES=(
     Xdefaults
     bash/bashrc
     gitconfig
+    mutt/muttrc
     )
 
 NO_ARGS=0
