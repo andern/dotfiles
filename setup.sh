@@ -6,6 +6,7 @@ SYMLINKS=(
     ~/.bashrc
     ~/.gitconfig
     ~/.muttrc
+    ~/.tmux.conf
     )
 SOURCES=(
     vim
@@ -14,6 +15,7 @@ SOURCES=(
     bash/bashrc
     gitconfig
     mutt/muttrc
+    tmux/tmux.conf
     )
 
 NO_ARGS=0
