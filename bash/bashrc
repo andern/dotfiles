@@ -22,4 +22,6 @@ alias mpcp='mpc playlist -f "[%position% %artist% - %title%]"'
 alias tmux="tmux -2"
 alias valgrinda="valgrind --track-origins=yes --leak-check=full"
 
-source $DIR/bashrc.local
+if [ -f $DIR/bashrc.local ]; then
+    source $DIR/bashrc.local
+fi
