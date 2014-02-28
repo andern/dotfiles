@@ -78,15 +78,15 @@ then
 fi
 
 # Initialize submodules
-git submodule init
-git submodule update
+git submodule update --recursive --init
 
-while getopts ":iuv" opt; do
+while getopts ":iuvy" opt; do
     case $opt in
         v) set -x;;
         i) install;;
         u) uninstall;;
-        y) (cd vim/bundle/YouCompleteMe && ./install.sh --clang-completer);;
+        y) (cd vim/bundle/YouCompleteMe\
+            && ./install.sh --clang-completer --system-libclang);;
         *) echo "Invalid option: -$OPTARG" >&2; exit;;
     esac
 done
