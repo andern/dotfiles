@@ -32,12 +32,13 @@ SOURCES=(
     )
 
 function usage {
-    echo "Usage: $0 -[iu]"
+    echo "Usage: $0 -[iuvy]"
     echo
     echo "Options:"
     echo "  -i    create symlinks"
     echo "  -u    delete symlinks"
     echo "  -v    verbose output"
+    echo "  -y    install YouCompleteMe vim plugin"
 }
 
 function symlink {
@@ -85,6 +86,7 @@ while getopts ":iuv" opt; do
         v) set -x;;
         i) install;;
         u) uninstall;;
+        y) (cd vim/bundle/YouCompleteMe && ./install.sh --clang-completer);;
         *) echo "Invalid option: -$OPTARG" >&2; exit;;
     esac
 done
