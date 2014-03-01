@@ -31,7 +31,7 @@ map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 map <C-x> :tabclose<CR>
 "" Windows
-map <TAB> <C-W>w
+map <C-TAB> <C-W>w
 map <S-TAB> <C-W>W
 map <C-t> :NERDTreeToggle<CR>
 
