@@ -77,13 +77,10 @@ then
     exit 0
 fi
 
-# Initialize submodules
-git submodule update --recursive --init
-
 while getopts ":iuvy" opt; do
     case $opt in
         v) set -x;;
-        i) install;;
+        i) git submodule update --recursive --init && install;;
         u) uninstall;;
         y) (cd vim/bundle/YouCompleteMe\
             && ./install.sh --clang-completer --system-libclang);;
