@@ -14,20 +14,25 @@ call togglebg#map("<F5>")
 "set cursorline
 set colorcolumn=80
 
- " Indentation
+" Indentation
 filetype plugin on
 filetype indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-  " Filetype specific indentation
+"" Filetype specific indentation
 autocmd Filetype c setlocal tabstop=8 shiftwidth=8
+autocmd Filetype h setlocal tabstop=8 shiftwidth=8
 
-" Tabbing
+" Multi-editor stuff
+"" Tabbing
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
-map <C-w> :tabclose<CR>
+map <C-x> :tabclose<CR>
+"" Windows
+map <TAB> <C-W>w
+map <S-TAB> <C-W>W
 
 call pathogen#incubate()
 call pathogen#helptags()
