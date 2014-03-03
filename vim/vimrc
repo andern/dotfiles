@@ -1,6 +1,8 @@
 " Look and feel
 syntax on
 set number
+map j gj
+map k gk
 
 " Solarized
 set nocompatible
