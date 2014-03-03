@@ -3,6 +3,7 @@ syntax on
 set number
 map j gj
 map k gk
+set timeoutlen=1000 ttimeoutlen=0
 
 " Solarized
 set nocompatible
