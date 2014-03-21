@@ -38,6 +38,9 @@ map <TAB> <C-W>w
 map <S-TAB> <C-W>W
 map <C-t> :NERDTreeToggle<CR>
 
+" Search stuff
+map <C-m> :FufCoverageFile<CR>
+
 call pathogen#incubate()
 call pathogen#helptags()
 
