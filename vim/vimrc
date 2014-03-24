@@ -36,12 +36,16 @@ map <C-x> :tabclose<CR>
 "" Windows
 map <TAB> <C-W>w
 map <S-TAB> <C-W>W
+map <Left> :vertical resize -5<CR>
+map <Right> :vertical resize +5<CR>
+map <Down> :resize -5<CR>
+map <Up> :resize +5<CR>
 map <C-t> :NERDTreeToggle<CR>
 
 " Search stuff
 map <C-g> :FufCoverageFile<CR>
 
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
 runtime source/backup
