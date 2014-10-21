@@ -1,30 +1,30 @@
 [submodule "vim/pathogen"]
 	path = vim/pathogen
-	url = git@github.com:tpope/vim-pathogen.git
+	url = https://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bash/dircolors-solarized"]
 	path = bash/dircolors-solarized
-	url = git@github.com:seebi/dircolors-solarized.git
+	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "mutt/mutt-colors-solarized"]
 	path = mutt/mutt-colors-solarized
-	url = git@github.com:altercation/mutt-colors-solarized.git
+	url = https://github.com/altercation/mutt-colors-solarized.git
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
-	url = git@github.com:Valloric/YouCompleteMe.git
+	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "tmux/tmux-colors-solarized"]
 	path = tmux/tmux-colors-solarized
-	url = git@github.com:seebi/tmux-colors-solarized.git
+	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-fuzzyfinder"]
 	path = vim/bundle/vim-fuzzyfinder
-	url = git@github.com:clones/vim-fuzzyfinder.git
+	url = https://github.com/clones/vim-fuzzyfinder.git
 [submodule "vim/bundle/vim-l9"]
 	path = vim/bundle/vim-l9
-	url = git@github.com:StephenPCG/vim-l9.git
+	url = https://github.com/StephenPCG/vim-l9.git
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
-	url = git@github.com:mileszs/ack.vim.git
+	url = https://github.com/mileszs/ack.vim.git
