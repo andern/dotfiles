@@ -8,12 +8,6 @@ auto_view application/pdf
 auto_view text/html
 alternative_order text/plain text/html
 
-set folder = "~/Maildir"
-source ~/.mutt/mailboxes
-set spoolfile = "+ah/INBOX"
-set record = "+ah/Sent"
-set postponed = "+ah/Drafts"
-
 # Key bindings
 bind pager <Up> previous-line
 bind pager <Down> next-line
