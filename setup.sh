@@ -83,7 +83,7 @@ while getopts ":iuvy" opt; do
         i) git pull --recurse-submodules && git submodule update --recursive && install;;
         u) uninstall;;
         y) (cd vim/bundle/YouCompleteMe\
-            && ./install.sh --clang-completer --system-libclang);;
+            && ./install.py --clang-completer --gocode-completer);;
         *) echo "Invalid option: -$OPTARG" >&2; exit;;
     esac
 done
