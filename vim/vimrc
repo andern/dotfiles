@@ -27,6 +27,7 @@ set expandtab
 autocmd Filetype c setlocal tabstop=8 shiftwidth=8
 autocmd Filetype h setlocal tabstop=8 shiftwidth=8
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2
+autocmd Filetype go setlocal noexpandtab
 
 " vim-go
 let g:go_highlight_functions = 1
