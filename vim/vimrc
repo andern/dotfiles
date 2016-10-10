@@ -28,6 +28,15 @@ autocmd Filetype c setlocal tabstop=8 shiftwidth=8
 autocmd Filetype h setlocal tabstop=8 shiftwidth=8
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2
 
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_autosave = 0
+
 " Multi-editor stuff
 "" Tabbing
 map <C-l> :tabn<CR>
