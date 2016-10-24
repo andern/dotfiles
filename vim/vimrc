@@ -4,6 +4,8 @@ set number
 map j gj
 map k gk
 set timeoutlen=1000 ttimeoutlen=0
+"" Working with source control
+set autoread
 
 " Solarized
 set nocompatible
