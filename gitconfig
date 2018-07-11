@@ -7,7 +7,7 @@
 
 [alias]
     co = checkout
-    st = !git branch && echo "" && git status
+    st = status
 	lg = log --color --graph --pretty=format:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset'
 
 [color]
