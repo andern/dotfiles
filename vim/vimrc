@@ -29,6 +29,7 @@ set expandtab
 autocmd Filetype c setlocal tabstop=8 shiftwidth=8
 autocmd Filetype h setlocal tabstop=8 shiftwidth=8
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2
 autocmd Filetype go setlocal noexpandtab
 
 " vim-go
@@ -57,6 +58,7 @@ map <C-t> :NERDTreeToggle<CR>
 
 " Search stuff
 map <C-g> :FufCoverageFile<CR>
+let g:fuf_coveragefile_exclude = '\v\~$|(^|[/\\])(node_modules)'
 
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()
