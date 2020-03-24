@@ -26,3 +26,6 @@
 
 [include]
     path = ~/dotfiles/gitconfig.local
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/

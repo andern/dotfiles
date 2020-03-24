@@ -21,11 +21,11 @@ urxvt*intensityStyles: false
 urxvt*imLocale:	       nb_NO.UTF-8
 
 ! Retina display
-!Xft.dpi:            160
-!Xft.antialias:      true
-!Xft.hinting:        true
-!Xft.hintstyle:      hintfull
-!Xft.rgba:           rgb
+Xft.dpi:            160
+Xft.antialias:      true
+Xft.hinting:        true
+Xft.hintstyle:      hintfull
+Xft.rgba:           rgb
 
 ! Solarized color scheme for the X Window System
 ! http://ethanschoonover.com/solarized
