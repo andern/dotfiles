@@ -22,6 +22,9 @@ export TERM="screen-256color"
 export LESSOPEN="| source-highlight-esc.sh %s"
 export LESS=' -R '
 
+# Fix blank screen on some java applications
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 alias mpcp='mpc playlist -f "[%position% %artist% - %title%]"'
 alias tmux="tmux -2"
 alias valgrinda="valgrind --track-origins=yes --leak-check=full"
