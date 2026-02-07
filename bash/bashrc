@@ -14,19 +14,8 @@ BASHDIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 export BASHDIR
 export DOTFILESDIR="$( cd -P "${BASHDIR}/.." && pwd )"
 
-eval `dircolors ${BASHDIR}/dircolors-solarized/dircolors.ansi-dark`
-
 export EDITOR=vim
-export SOLARIZED=true
-export LESSOPEN="| source-highlight-esc.sh %s"
 export LESS=' -R '
-
-# Fix blank screen on some java applications
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-alias mpcp='mpc playlist -f "[%position% %artist% - %title%]"'
-alias tmux="tmux -2"
-alias valgrinda="valgrind --track-origins=yes --leak-check=full"
 
 if [ -f $BASHDIR/bashrc.local ]; then
     source $BASHDIR/bashrc.local

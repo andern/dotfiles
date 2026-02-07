@@ -13,21 +13,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 SYMLINKS=(
-    ~/.vim
-    ~/.vimrc
-    ~/.Xdefaults
+    ~/.config/nvim
     ~/.bashrc
     ~/.gitconfig
-    ~/.muttrc
     ~/.tmux.conf
     )
 SOURCES=(
-    vim
-    vim/vimrc
-    Xdefaults
+    nvim
     bash/bashrc
     gitconfig
-    mutt/muttrc
     tmux/tmux.conf
     )
 
@@ -38,7 +32,6 @@ function usage {
     echo "  -i    create symlinks"
     echo "  -u    delete symlinks"
     echo "  -v    verbose output"
-    echo "  -y    install YouCompleteMe vim plugin"
 }
 
 function symlink {
@@ -77,13 +70,11 @@ then
     exit 0
 fi
 
-while getopts ":iuvy" opt; do
+while getopts ":iuv" opt; do
     case $opt in
         v) set -x;;
-        i) git submodule update --init --recursive && git pull --recurse-submodules && install;;
+        i) install;;
         u) uninstall;;
-        y) (cd vim/bundle/YouCompleteMe\
-            && ./install.py --clang-completer --gocode-completer);;
         *) echo "Invalid option: -$OPTARG" >&2; exit;;
     esac
 done
