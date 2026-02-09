@@ -1,4 +1,3 @@
-vim.cmd.colorscheme "catppuccin"
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
@@ -20,6 +19,7 @@ end
 local function set_colors()
 	-- Enable 24 bit colors
 	vim.opt.termguicolors = true
+	vim.cmd.colorscheme "catppuccin-frappe"
 end
 
 undo_settings()
