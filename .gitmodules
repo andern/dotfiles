@@ -4,3 +4,13 @@
 [submodule "nvim/pack/plugins/catppuccin-theme"]
 	path = nvim/pack/plugins/start/catppuccin-theme
 	url = https://github.com/catppuccin/nvim.git
+[submodule "nvim/pack/plugins/start/plenary.nvim"]
+	path = nvim/pack/plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "nvim/pack/plugins/start/telescope.nvim"]
+	path = nvim/pack/plugins/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "nvim/pack/plugins/start/harpoon"]
+	path = nvim/pack/plugins/start/harpoon
+	url = https://github.com/ThePrimeagen/harpoon.git
+	branch = harpoon2

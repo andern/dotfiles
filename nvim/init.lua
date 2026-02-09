@@ -1,3 +1,6 @@
+local harpoon = require("harpoon")
+local telescope = require("telescope.builtin")
+
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
@@ -22,5 +25,29 @@ local function set_colors()
 	vim.cmd.colorscheme "catppuccin-frappe"
 end
 
+local function harpoon_setup()
+	harpoon:setup();
+	vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+	vim.keymap.set("n", "<M-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+	vim.keymap.set("n", "<M-æ>", function() harpoon:list():select(1) end)
+	vim.keymap.set("n", "<M-.>", function() harpoon:list():select(2) end)
+	vim.keymap.set("n", "<M-y>", function() harpoon:list():select(3) end)
+	vim.keymap.set("n", "<M-å>", function() harpoon:list():select(4) end)
+
+	-- Toggle previous & next buffers stored within Harpoon list
+	vim.keymap.set("n", "<M-p>", function() harpoon:list():prev() end)
+	vim.keymap.set("n", "<M-n>", function() harpoon:list():next() end)
+end
+
+local function telescope_setup()
+	vim.keymap.set('n', '<leader>ff', telescope.find_files, { desc = 'Telescope find files' })
+	vim.keymap.set('n', '<leader>fg', telescope.live_grep, { desc = 'Telescope live grep' })
+	vim.keymap.set('n', '<leader>fb', telescope.buffers, { desc = 'Telescope buffers' })
+	vim.keymap.set('n', '<leader>fh', telescope.help_tags, { desc = 'Telescope help tags' })
+end
+
 undo_settings()
 set_colors()
+harpoon_setup()
+telescope_setup()
