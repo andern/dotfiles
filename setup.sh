@@ -14,15 +14,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 SYMLINKS=(
     ~/.config/nvim
+    ~/.config/tmux
     ~/.bashrc
     ~/.gitconfig
-    ~/.tmux.conf
     )
 SOURCES=(
     nvim
+    tmux
     bash/bashrc
     gitconfig
-    tmux/tmux.conf
     )
 
 function usage {
@@ -73,7 +73,7 @@ fi
 while getopts ":iuv" opt; do
     case $opt in
         v) set -x;;
-        i) install;;
+        i) git submodule update --init --recursive && git pull --recurse-submodules && install;;
         u) uninstall;;
         *) echo "Invalid option: -$OPTARG" >&2; exit;;
     esac

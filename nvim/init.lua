@@ -1,3 +1,4 @@
+vim.cmd.colorscheme "catppuccin"
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'

@@ -1,0 +1,6 @@
+[submodule "tmux/catppuccin-theme"]
+	path = tmux/plugins/catppuccin
+	url = https://github.com/catppuccin/tmux
+[submodule "nvim/pack/plugins/catppuccin-theme"]
+	path = nvim/pack/plugins/start/catppuccin-theme
+	url = https://github.com/catppuccin/nvim.git
