@@ -29,6 +29,7 @@ function usage {
     echo "Usage: $0 -[iuvy]"
     echo
     echo "Options:"
+    echo "  -g    update git submodules"
     echo "  -i    create symlinks"
     echo "  -u    delete symlinks"
     echo "  -v    verbose output"
@@ -70,10 +71,11 @@ then
     exit 0
 fi
 
-while getopts ":iuv" opt; do
+while getopts ":giuv" opt; do
     case $opt in
         v) set -x;;
-        i) git submodule update --init --recursive && git pull --recurse-submodules && install;;
+        g) git submodule update --init --recursive && git pull --recurse-submodules;;
+        i) install;;
         u) uninstall;;
         *) echo "Invalid option: -$OPTARG" >&2; exit;;
     esac

@@ -11,6 +11,11 @@ vim.opt.cmdheight = 0
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Disable some providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 local function undo_settings()
 	local undo_dir = vim.fn.stdpath('cache') .. '/undo/'
 	vim.fn.mkdir(undo_dir, 'p')
