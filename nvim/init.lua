@@ -27,7 +27,7 @@ end
 local function set_colors()
 	-- Enable 24 bit colors
 	vim.opt.termguicolors = true
-	vim.cmd.colorscheme "catppuccin-frappe"
+	vim.cmd.colorscheme "tokyonight-night"
 end
 
 local function harpoon_setup()

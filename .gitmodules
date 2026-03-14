@@ -1,9 +1,3 @@
-[submodule "tmux/catppuccin-theme"]
-	path = tmux/plugins/catppuccin
-	url = https://github.com/catppuccin/tmux
-[submodule "nvim/pack/plugins/catppuccin-theme"]
-	path = nvim/pack/plugins/start/catppuccin-theme
-	url = https://github.com/catppuccin/nvim.git
 [submodule "nvim/pack/plugins/start/plenary.nvim"]
 	path = nvim/pack/plugins/start/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim.git
@@ -14,3 +8,9 @@
 	path = nvim/pack/plugins/start/harpoon
 	url = https://github.com/ThePrimeagen/harpoon.git
 	branch = harpoon2
+[submodule "nvim/pack/plugins/start/tokyonight.nvim"]
+	path = nvim/pack/plugins/start/tokyonight.nvim
+	url = https://github.com/folke/tokyonight.nvim.git
+[submodule "tmux/plugins/tokyo-night-tmux"]
+	path = tmux/plugins/tokyo-night-tmux
+	url = https://github.com/janoamaral/tokyo-night-tmux.git
